@@ -32,7 +32,7 @@ public class HeaderConsumer {
 
   public static void main(String[] args) {
     Consumer<String, String> consumer = new KafkaConsumer<>(createConfig());
-    consumer.subscribe(Collections.singletonList(HeaderProducer.TOPIC));
+    consumer.subscribe(Collections.singletonList(HeaderKafkaStreams.OUTPUT_TOPIC));
 
     while (true) {
       ConsumerRecords<String, String> records = consumer.poll(Long.MAX_VALUE);

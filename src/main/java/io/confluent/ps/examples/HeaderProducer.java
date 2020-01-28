@@ -18,7 +18,7 @@ public class HeaderProducer {
 
   public static final int MESSAGE_INTERVAL_MS = 1000;
 
-  public static final String TOPIC = "test";
+  public static final String INPUT_TOPIC = "test";
 
   private static Properties createConfig() {
     Properties props = new Properties();
@@ -42,7 +42,7 @@ public class HeaderProducer {
       headers.add(new LatencyHeader(now));
 
       ProducerRecord<String, String> record = new ProducerRecord<>(
-              TOPIC,
+              INPUT_TOPIC,
               null,
               now,
               "key",
